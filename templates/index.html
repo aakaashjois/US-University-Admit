@@ -1,81 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>US University Admit</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
 </head>
 <body>
-<div class="container">
-    <div class="row bg-light">
-        <h1>US University Admit</h1>
+<div class="container align-items-center mt-2 mb-2">
+    <div class="row card p-5">
+        <div class="card-title text-center">
+            <h1>US University Admit</h1>
+        </div>
+        <div class="card-body text-center">
+            <h2>Use this tool to figure out if you will get a US University Admit</h2>
+            <div class="input-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="gre_score_input">GRE Score</label>
+                    </div>
+                    <div class="col">
+                        <input type="range" id="gre_score_input" min="260" max="340" value="300" step="1"
+                               oninput="gre_score_output.value = this.value">
+                    </div>
+                    <div class="col">
+                        <output id="gre_score_output">300</output>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="toefl_score_input">TOEFL Score</label>
+                    </div>
+                    <div class="col">
+                        <input type="range" id="toefl_score_input" min="0" max="120" value="60" step="1"
+                               oninput="toefl_score_output.value = this.value">
+                    </div>
+                    <div class="col">
+                        <output id="toefl_score_output">120</output>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="university_rating_input">University Rating (5 is best. 1 is worst)</label>
+                    </div>
+                    <div class="col">
+                        <input type="range" id="university_rating_input" min="1" max="5" value=3 step="1"
+                               oninput="university_rating_output.value = this.value">
+                    </div>
+                    <div class="col">
+                        <output id="university_rating_output">3</output>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="sop_rating_input">SOP Rating</label>
+                    </div>
+                    <div class="col">
+                        <input type="range" id="sop_rating_input" min="1" max="5" step="0.5"
+                               oninput="sop_rating_output.value = this.value">
+                    </div>
+                    <div class="col">
+                        <output id="sop_rating_output">3</output>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="lor_rating_input">LOR Rating</label>
+                    </div>
+                    <div class="col">
+                        <input type="range" id="lor_rating_input" min="1" max="5" step="0.5"
+                               oninput="lor_rating_output.value = this.value">
+                    </div>
+                    <div class="col">
+                        <output id="lor_rating_output">3</output>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="cgpa_input">CGPA Rating</label>
+                    </div>
+                    <div class="col">
+                        <input type="range" id="cgpa_input" min="0" max="10" step="0.1"
+                               oninput="cgpa_output.value = this.value">
+                    </div>
+                    <div class="col">
+                        <output id="cgpa_output">3</output>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="research_input">Research Publications</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="research_input" oninput="research_output.value = this.checked">
+                    </div>
+                </div>
+                <input type="button" value="Submit" class="submit btn btn-primary">
+            </div>
+        </div>
     </div>
-    <div class="row bg-light">
-        <h2>Use this tool to figure out if you will get a US University Admit</h2>
-    </div>
-    <div class="row">
-        <label for="gre_score_input">GRE Score</label>
-        <input type="range" id="gre_score_input" min="260" max="340"
-               value="300" step="1"
-               oninput="gre_score_output.value = this.value">
-        <output id="gre_score_output">300</output>
-
-    </div>
-    <div class="row">
-        <label for="toefl_score_input">TOEFL Score</label>
-        <input type="range" id="toefl_score_input" min="0" max="120"
-               value="60" step="1"
-               oninput="toefl_score_output.value = this.value">
-        <output id="toefl_score_output">120</output>
-    </div>
-    <div class="row">
-        <label for="university_rating_input">University Rating (5 is best. 1 is worst)</label>
-        <input type="range"
-               id="university_rating_input"
-               min="1" max="5"
-               value=3 step="1"
-               oninput="university_rating_output.value = this.value">
-        <output id="university_rating_output">3</output>
-    </div>
-    <div class="row">
-        <label for="sop_rating_input">SOP Rating</label>
-        <input type="range" id="sop_rating_input" min="1" max="5"
-               step="0.5"
-               oninput="sop_rating_output.value = this.value">
-        <output id="sop_rating_output">3</output>
-    </div>
-    <div class="row">
-        <label for="lor_rating_input">LOR Rating</label>
-        <input type="range" id="lor_rating_input" min="1" max="5"
-               step="0.5"
-               oninput="lor_rating_output.value = this.value">
-        <output id="lor_rating_output">3</output>
-    </div>
-    <div class="row">
-        <label for="cgpa_input">CGPA Rating</label>
-        <input type="range" id="cgpa_input" min="0" max="10" step="0.1"
-               oninput="cgpa_output.value = this.value">
-        <output id="cgpa_output">3</output>
-    </div>
-    <div class="row">
-        <label for="research_input">Research Publications</label>
-        <input type="checkbox" id="research_input">
-    </div>
-    <div class="row">
-        <input type="button" value="Submit" class="submit">
-    </div>
-    <div class="row">
-        <output id="result">0</output>
+    <div class="row card result-credits mt-2 mb-2">
+        <div class="card-title p-5">
+            <h3 id="result"></h3>
+            <div class="card-body">
+                <h5>This result has been obtained based on the <a
+                        href="https://www.kaggle.com/mohansacharya/graduate-admissions">Graduate Admissions</a> dataset
+                    on Kaggle. A machine learning model trained on this dataset was able to obtain the results. The
+                    complete training procedure is open sourced and can be found on <a
+                            href="https://www.kaggle.com/aakaashjois/simple-random-forest-regression">this Kaggle
+                        kernel</a>.</h5>
+            </div>
+        </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+<script>$(document).ready(function () {
+    $('body').bootstrapMaterialDesign();
+});</script>
 
 <script>
     $(document).ready(function () {
+        $('.result-credits').hide();
         $('.submit').click(function () {
             let gre = parseInt(gre_score_input.value);
             let toefl = parseInt(toefl_score_input.value);
@@ -84,25 +134,20 @@
             let lor = parseInt(lor_rating_input.value);
             let cgpa = parseInt(cgpa_input.value);
             let research = research_input.checked ? 1 : 0;
-            let values = [gre,
-                toefl,
-                uni,
-                sop,
-                lor,
-                cgpa,
-                research];
             $.ajax({
                 url: 'http://localhost:5000/predict',
                 type: 'post',
-                data: JSON.stringify(values),
+                data: JSON.stringify([gre, toefl, uni, sop, lor, cgpa, research]),
                 dataType: 'json',
                 success: [function (data) {
-                    result.value = (data['prediction'] * 100).toPrecision(4).toString() + '%';
+                    let pred = (data['prediction'] * 100).toPrecision(4).toString();
+                    let success_string = `Your probability of getting an admit in a US University is ${pred} %`;
+                    $('#result').html(success_string);
+                    $('.result-credits').show();
                 }]
             });
         });
     })
 </script>
-
 </body>
 </html>
