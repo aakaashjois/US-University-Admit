@@ -1,0 +1,4 @@
+numpy
+dill
+flask
+flask-cors
