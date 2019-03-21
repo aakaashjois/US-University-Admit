@@ -2,3 +2,4 @@ numpy
 dill
 flask
 flask-cors
+gunicorn
