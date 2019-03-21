@@ -135,7 +135,7 @@
             let cgpa = parseInt(cgpa_input.value);
             let research = research_input.checked ? 1 : 0;
             $.ajax({
-                url: 'http://localhost:5000/predict',
+                url: 'http://localhost:{{ port }}/predict',
                 type: 'post',
                 data: JSON.stringify([gre, toefl, uni, sop, lor, cgpa, research]),
                 dataType: 'json',
