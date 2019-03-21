@@ -10,18 +10,16 @@ model = load(open('./models/rf_v1.pkl', 'rb'))
 port = 5000
 
 
-@app.route('/predict', methods=['POST'])
-def get_prediction():
-    data = np.array(request.get_json(force=True), dtype=np.float)
-    pred = model.predict(data.reshape(1, -1))
-    response = jsonify(prediction=pred[0])
-    response.status_code = 200
-    return response
-
-
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', port=port)
+    if request.method == 'GET':
+        return render_template('index.html', port=port)
+    if request.method == 'POST':
+        data = np.array(request.get_json(force=True), dtype=np.float)
+        pred = model.predict(data.reshape(1, -1))
+        response = jsonify(prediction=pred[0])
+        response.status_code = 200
+        return response
 
 
 if __name__ == '__main__':

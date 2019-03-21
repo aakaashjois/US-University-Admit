@@ -2,5 +2,4 @@ numpy
 dill
 flask
 flask-cors
-gunicorn
 scikit-learn
